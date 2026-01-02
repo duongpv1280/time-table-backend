@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongodb/mongodb-community-server:latest
+    container_name: mongodb_server
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+      # Mount file key vào container
+      - ./mongodb.key:/data/configdb/mongodb.key
+    # Cập nhật command để nhận keyfile
+    command: >
+      mongod --replSet rs0 
+      --keyFile /data/configdb/mongodb.key 
+      --bind_ip_all
+    restart: always # Automatically restart the container if it fails
+
+volumes:
+  mongo-data:
+    driver: local
