@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx watch --clear-screen=false src/adapter/http/server.ts"
+    "dev": "tsx watch --clear-screen=false src/adapter/http/server.ts",
+    "gen:prisma": "npx prisma generate"
   },
   "author": "Pham Vu Duong",
   "license": "MIT",
@@ -29,6 +30,8 @@
     "@hono/standard-validator": "^0.2.0",
     "@prisma/client": "6.19",
     "@types/mssql": "^9.1.8",
+    "bull": "^4.16.5",
+    "bullmq": "^5.66.4",
     "hono-openapi": "^1.1.2",
     "mssql": "^12.2.0",
     "prisma": "6.19",

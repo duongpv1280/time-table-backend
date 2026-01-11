@@ -1,5 +1,5 @@
 import type { Slot } from "@/generated/prisma-client/client";
-import type { SlotCreateInput, SlotUncheckedCreateInput } from "@/generated/prisma-client/models";
+import type { SlotDayOfWeekPartOfDayLessonNoCompoundUniqueInput, SlotUncheckedCreateInput, SlotUncheckedUpdateInput, SlotWhereUniqueInput } from "@/generated/prisma-client/models";
 import { DatabaseClient, type TransactionalPrismaClient } from "@/infrastructure/db/client";
 import { inject, injectable, singleton } from "tsyringe";
 
@@ -25,6 +25,17 @@ export class SlotWriter {
     const result = await client.slot.createMany({ data: input });
 
     return result.count;
+  }
+
+  async update(
+    id: number,
+    input: SlotUncheckedUpdateInput,
+    prisma?: TransactionalPrismaClient,
+  ): Promise<Slot> {
+    const client = prisma || this.client.prisma;
+    const result = await client.slot.update({ data: input, where: { id }})
+
+    return result;
   }
 
   async deleteAll(prisma?: TransactionalPrismaClient): Promise<number> {

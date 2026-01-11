@@ -28,4 +28,5 @@ model Slot {
   lessonNo Int
   subjectCode String?
   subject Subject? @relation(fields: [subjectCode], references: [code])
+  @@unique([dayOfWeek, partOfDay, lessonNo])
 }

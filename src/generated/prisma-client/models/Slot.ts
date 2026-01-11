@@ -242,6 +242,7 @@ export type SlotOrderByWithRelationInput = {
 
 export type SlotWhereUniqueInput = Prisma.AtLeast<{
   id?: number
+  dayOfWeek_partOfDay_lessonNo?: Prisma.SlotDayOfWeekPartOfDayLessonNoCompoundUniqueInput
   AND?: Prisma.SlotWhereInput | Prisma.SlotWhereInput[]
   OR?: Prisma.SlotWhereInput[]
   NOT?: Prisma.SlotWhereInput | Prisma.SlotWhereInput[]
@@ -250,7 +251,7 @@ export type SlotWhereUniqueInput = Prisma.AtLeast<{
   lessonNo?: Prisma.IntFilter<"Slot"> | number
   subjectCode?: Prisma.StringNullableFilter<"Slot"> | string | null
   subject?: Prisma.XOR<Prisma.SubjectNullableScalarRelationFilter, Prisma.SubjectWhereInput> | null
-}, "id">
+}, "id" | "dayOfWeek_partOfDay_lessonNo">
 
 export type SlotOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -335,6 +336,12 @@ export type SlotListRelationFilter = {
 
 export type SlotOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
+}
+
+export type SlotDayOfWeekPartOfDayLessonNoCompoundUniqueInput = {
+  dayOfWeek: number
+  partOfDay: number
+  lessonNo: number
 }
 
 export type SlotCountOrderByAggregateInput = {
