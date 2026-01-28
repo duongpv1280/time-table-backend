@@ -5,6 +5,7 @@ import { app as getSubjectsApp } from './api/v1/subject/get-list/app'
 import { app as createBulkSlotsApp } from './api/v1/slot/bulk-create/app'
 import { app as deleteAllSlotsApp } from './api/v1/slot/delete-all/app'
 import { app as updateSubject } from './api/v1/subject/update/app'
+import { app as uploadTimeTable } from './api/v1/time-table/upload/app'
 
 export const createRoutes = (app: Hono) => {
   app.route('api/v1/', timeTableList);
@@ -13,6 +14,7 @@ export const createRoutes = (app: Hono) => {
   app.route('api/v1/', createBulkSlotsApp);
   app.route('api/v1/', deleteAllSlotsApp);
   app.route('api/v1/', updateSubject);
+  app.route('api/v1/', uploadTimeTable);
 
   return app;
 }

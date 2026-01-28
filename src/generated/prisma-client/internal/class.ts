@@ -23,7 +23,7 @@ const config: runtime.GetPrismaClientConfig = {
       "value": "prisma-client"
     },
     "output": {
-      "value": "/Volumes/BOOTCAMP/Projects/Hobbies/SideProject/backend/src/generated/prisma-client",
+      "value": "/home/phamvuduong/Projects/timetable/backend/src/generated/prisma-client",
       "fromEnvVar": null
     },
     "config": {
@@ -32,12 +32,12 @@ const config: runtime.GetPrismaClientConfig = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "darwin",
+        "value": "debian-openssl-3.0.x",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/Volumes/BOOTCAMP/Projects/Hobbies/SideProject/backend/prisma/schema.prisma",
+    "sourceFilePath": "/home/phamvuduong/Projects/timetable/backend/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativePath": "../../../prisma",
@@ -47,7 +47,7 @@ const config: runtime.GetPrismaClientConfig = {
     "db"
   ],
   "activeProvider": "mongodb",
-  "postinstall": false,
+  "postinstall": true,
   "inlineDatasources": {
     "db": {
       "url": {
