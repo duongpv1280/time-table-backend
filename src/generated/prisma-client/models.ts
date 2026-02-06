@@ -10,4 +10,5 @@
  */
 export type * from './models/Subject'
 export type * from './models/Slot'
+export type * from './models/Job'
 export type * from './commonInputTypes'

@@ -27,3 +27,8 @@ export type Subject = Prisma.SubjectModel
  * 
  */
 export type Slot = Prisma.SlotModel
+/**
+ * Model Job
+ * 
+ */
+export type Job = Prisma.JobModel
